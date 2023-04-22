@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Nostr Daisy",
-    "slug": "nostr-daisy",
+    "name": "HashTag",
+    "slug": "HashTag",
     "version": "0.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
