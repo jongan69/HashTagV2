@@ -2,8 +2,6 @@
 
 A Nostr client for iOS and Android
 
-![image of Daisy in iOS](/assets/readme-image.png)
-
 ## Downloads
 
 You can find downloads here: [https://neb.lol/nostr](https://neb.lol/nostr)
