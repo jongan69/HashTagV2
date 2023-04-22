@@ -36,6 +36,7 @@
     "expo-splash-screen": "^0.17.5",
     "expo-status-bar": "1.4.2",
     "expo-system-ui": "~2.0.1",
+    "expo-updates": "~0.15.6",
     "lottie-react-native": "^5.1.5",
     "nostr-tools": "1.2.0",
     "react": "18.1.0",
