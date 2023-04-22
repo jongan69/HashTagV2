@@ -10,11 +10,12 @@ import ViewPager from '@react-native-community/viewpager';
 
 // import server from '../server.json';
 import { Container, Text } from '../theme/home';
+// import { useNote, useProfile } from "store/hooks"
 
 
 // import Swiper from "react-native-deck-swiper";
 
-const HomeVideoScroller = (props: unknown) => {
+const HomeVideoScroller = (props) => {
   // const navigation = useNavigation();
   // // const connector = useWalletConnect();
   // // const [tab, setTab] = useState(1);
@@ -22,6 +23,7 @@ const HomeVideoScroller = (props: unknown) => {
   // const dispatch = useDispatch()
   const [height, setHeight] = useState('');
   const [width, setWidth] = useState('');
+  // const note = useNote(props?.data)
   // const [data, setData] = useState(props as [])
 
   useEffect(() => {
@@ -83,17 +85,17 @@ const HomeVideoScroller = (props: unknown) => {
           style={{ flex: 1 }}
           initialPage={0}
         >
-          {/* {data?.map(item => (
+          {/* {note?.map(item => (
             <View key={item?.id}>
               <Feed item={item} play={Number(item?.id) === active} />
             </View>
           ))} */}
-        
+
         </ViewPager>
       </Container>
       <Text>
-            {`${JSON.stringify(props)}`}
-          </Text>
+        {JSON.stringify(props)}
+      </Text>
     </SafeAreaView>
   );
 };

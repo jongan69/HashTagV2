@@ -8,6 +8,8 @@ import { useDispatch } from "store"
 import { doPublishNote } from "store/notesSlice"
 import { useNote } from "store/hooks"
 import { nostrEventKinds } from "core/nostr"
+import * as DocumentPicker from "expo-document-picker";
+
 
 type Props = {
   closeModal: () => void
@@ -32,6 +34,19 @@ export const NoteCreate: React.FC<Props> = ({ closeModal, id }) => {
     dispatch(doPublishNote({ content, kind: nostrEventKinds.note, replyId: id, onSuccess: closeModal }))
   }
 
+  const _pickDocument = async () => {
+    await DocumentPicker.getDocumentAsync({})
+      .then((data) => {
+        // alert(data);
+        setContent(data);
+        // Format URI
+        // Upload to IPFS via Storage.NFT
+        // Return IPFS Hash
+        // Mint Token on XRP
+        console.log(data);
+      });
+  }
+
   return (
     <Layout>
       <View style={{ flex: 1 }}>
@@ -41,14 +56,19 @@ export const NoteCreate: React.FC<Props> = ({ closeModal, id }) => {
         <ScrollView style={{ flex: 1 }} keyboardShouldPersistTaps="handled">
           {note && <Note id={id} hideActions />}
           <View style={{ flex: 1, paddingRight: 16, paddingLeft: 16, marginTop: 16 }}>
-            <Input
+            <Button
+              onPress={_pickDocument}
+            >
+              {"Select Video"}
+            </Button>
+            {/* <Input
               label={id ? "Reply" : "Post"}
               autoCapitalize="none"
               multiline
               placeholder="hello world..."
               value={content}
               onChangeText={(newContent) => setContent(newContent)}
-            />
+            /> */}
             <Button style={{ marginTop: 16, borderRadius: 10 }} onPress={handlePublish}>
               {id ? "Reply" : "Post"}
             </Button>
